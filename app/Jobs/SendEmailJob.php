@@ -35,7 +35,7 @@ class SendEmailJob implements ShouldQueue
      */
     public function handle()
     {
-        $tracking_email = new SendTrackingCode($this->email);
+        $tracking_email = new SendTrackingCode($this->$tracking_code);
         Mail::to($this->email)->send($tracking_email);
     }
 }
