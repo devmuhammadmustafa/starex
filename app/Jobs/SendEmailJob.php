@@ -25,7 +25,7 @@ class SendEmailJob implements ShouldQueue
         protected string $tracking_code
     )
     {
-        //
+
     }
 
     /**
@@ -35,7 +35,7 @@ class SendEmailJob implements ShouldQueue
      */
     public function handle()
     {
-        $tracking_email = new SendTrackingCode($this->$tracking_code);
+        $tracking_email = new SendTrackingCode($this->tracking_code);
         Mail::to($this->email)->send($tracking_email);
     }
 }
