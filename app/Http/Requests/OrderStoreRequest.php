@@ -26,7 +26,7 @@ class OrderStoreRequest extends FormRequest
     public function rules()
     {
         return [
-//            'tracking_code' => 'required|unique:trackings|max:55',
+            'tracking_code' => 'required|unique:trackings|max:55',
             "items" => ["required","array","min:1","max:1000"],
             'items.*.category' => 'required',
             'items.*.shipping_price' => 'required',
